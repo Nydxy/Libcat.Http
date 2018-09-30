@@ -1,4 +1,11 @@
-﻿using System;
+﻿/* Libcat.Http
+ * 2018-10-1  v1.0.0
+ * 
+ * 
+ */
+
+
+using System;
 using System.IO;
 using System.IO.Compression;
 using System.Net;
