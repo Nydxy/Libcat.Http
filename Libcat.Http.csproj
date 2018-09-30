@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net45</TargetFrameworks>
+    <ApplicationIcon />
+    <OutputType>Library</OutputType>
+    <StartupObject />
+    <Authors>Libcat</Authors>
+    <Company />
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>A very simple http library. You can do get/post requests easily with this lib. Only frequently used functions included (but enough at most time).</Description>
+    <PackageReleaseNotes>A very simple http library. You can do get/post requests easily with this lib. Only frequently used functions included (but enough at most time).</PackageReleaseNotes>
+    <Copyright>Copyright Libcat. 2017</Copyright>
+  </PropertyGroup>
+<ItemGroup Condition="'$(TargetFramework)' == 'net45'">
+    <Reference Include="System.Web" />
+  </ItemGroup>
+</Project>
