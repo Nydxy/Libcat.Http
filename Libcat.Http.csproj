@@ -9,7 +9,7 @@
     <Company />
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>A very simple &amp; light http library. You can do get/post requests easily with this lib.</Description>
-    <PackageReleaseNotes>A very simple http library. You can do get/post requests easily with this lib. Only frequently used functions included (but enough at most time).</PackageReleaseNotes>
+    <PackageReleaseNotes>修正目标平台的错误(x64-&gt;Any CPU)   Fix mistake of target platform(x64-&gt;Any CPU)</PackageReleaseNotes>
     <Copyright>Copyright Libcat. 2018</Copyright>
     <PackageProjectUrl>https://github.com/Nydxy/Libcat.Http</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/Nydxy/Libcat.Http/blob/master/LICENSE</PackageLicenseUrl>
@@ -17,10 +17,12 @@
     <RepositoryType>git</RepositoryType>
     <PackageIconUrl>https://avatars0.githubusercontent.com/u/28485105?s=460&amp;v=4</PackageIconUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Version>1.0.1</Version>
+    <PackageTags>http</PackageTags>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net45|AnyCPU'">
-    <PlatformTarget>x64</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
 <ItemGroup Condition="'$(TargetFramework)' == 'net45'">
     <Reference Include="System.Web" />
