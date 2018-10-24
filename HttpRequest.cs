@@ -294,8 +294,7 @@ namespace Libcat.Http
             //if user request bytes, return it   如果用户要求bytes数据，不解析为文本
             if (ResultType == ResultType.Byte)
             {
-                result.ResultByte = new byte[resStream.Length];
-                resStream.Read(result.ResultByte, 0, (int)resStream.Length);
+                result.ResultByte = GetMemoryStream(resStream).ToArray();
                 resStream.Close();
                 resStream.Dispose();
                 return result;
@@ -335,6 +334,24 @@ namespace Libcat.Http
             #endregion
 
             return result;
+        }
+
+        /// <summary>
+        /// 获取流中的数据转换为内存流处理
+        /// </summary>
+        /// <param name="streamResponse">流</param>
+        private MemoryStream GetMemoryStream(Stream streamResponse)
+        {
+            MemoryStream stream = new MemoryStream();
+            int Length = 256;
+            Byte[] buffer = new Byte[Length];
+            int bytesRead = streamResponse.Read(buffer, 0, Length);
+            while (bytesRead > 0)
+            {
+                stream.Write(buffer, 0, bytesRead);
+                bytesRead = streamResponse.Read(buffer, 0, Length);
+            }
+            return stream;
         }
 
         /// <summary>

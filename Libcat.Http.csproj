@@ -9,7 +9,7 @@
     <Company />
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>A very simple &amp; light http library. You can do get/post requests easily with this lib.</Description>
-    <PackageReleaseNotes>修正目标平台的错误(x64-&gt;Any CPU)   Fix mistake of target platform(x64-&gt;Any CPU)</PackageReleaseNotes>
+    <PackageReleaseNotes>修复返回结果为Byte[]时的错误</PackageReleaseNotes>
     <Copyright>Copyright Libcat. 2018</Copyright>
     <PackageProjectUrl>https://github.com/Nydxy/Libcat.Http</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/Nydxy/Libcat.Http/blob/master/LICENSE</PackageLicenseUrl>
@@ -17,7 +17,7 @@
     <RepositoryType>git</RepositoryType>
     <PackageIconUrl>https://avatars0.githubusercontent.com/u/28485105?s=460&amp;v=4</PackageIconUrl>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <PackageTags>http</PackageTags>
   </PropertyGroup>
 
