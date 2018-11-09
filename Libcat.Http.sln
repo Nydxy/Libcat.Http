@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Libcat.Http", "Libcat.Http.csproj", "{9E8B40B0-B5FC-4AFB-AC34-490D1504A8B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Libcat.Http", "Libcat.Http\Libcat.Http.csproj", "{9E8B40B0-B5FC-4AFB-AC34-490D1504A8B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "..\Demo\Demo.csproj", "{6DB74C69-284B-4F53-AECF-D455B40FDD9B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "Demo\Demo.csproj", "{6DB74C69-284B-4F53-AECF-D455B40FDD9B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
