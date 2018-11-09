@@ -98,15 +98,31 @@ namespace Libcat.Http
             }
             result.StatusCode = response.StatusCode;
             result.StatusDescription = response.ReasonPhrase;
-           //result.Header=response.Headers.
-           //foreach (var a in response.Headers)
-           // {
-           //     result.Header.Add();
-           // }
+            //result.Header=response.Headers.
+            //foreach (var a in response.Headers)
+            // {
+            //     result.Header.Add();
+            // }
             result.RedirectUrl = response.Headers.Location.ToString();
             result.ResponseUrl = response.RequestMessage.RequestUri.ToString();
             result.CookieContainer = _CookieContainer;
             return result;
         }
+
+        private static void EnumerateHeaders(System.Net.Http.Headers.HttpHeaders headers)
+        {
+            foreach (var header in headers)
+            {
+                var value = "";
+                foreach (var val in header.Value)
+                {
+                    value = val + " ";
+                }
+                Console.WriteLine("Header: " + header.Key + " Value: " + value);
+            }
+        }
     }
+
+    
+
 }
