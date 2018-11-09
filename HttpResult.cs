@@ -13,56 +13,42 @@ namespace Libcat.Http
         /// <summary>
         ///ResponseUrl
         /// </summary>
-        public string ResponseUrl { get; set; }
+        public string ResponseUrl { get; internal set; }
 
         /// <summary>
         /// 302 Redirect url. or Header[location]
         /// </summary>
-        public string RedirectUrl
-        {
-            get
-            {
-                if (Header != null && Header.Count > 0)
-                {
-                    if (!string.IsNullOrEmpty(Header["location"]))
-                    {
-                        return Header["location"].ToString();
-                    }
-                    return string.Empty;
-                }
-                return string.Empty;
-            }
-        }
+        public string RedirectUrl { get; internal set; } = string.Empty;
 
         /// <summary>
         /// Cookies of response, not all cookies. All updated cookies are in your cookie container.
         /// </summary>
-        public CookieCollection ResponseCookies { get; set; }
+        public CookieCollection ResponseCookies { get; internal set; }
 
         /// <summary>
         /// All updated cookies
         /// </summary>
-        public CookieContainer CookieContainer { get; set; }
+        public CookieContainer CookieContainer { get; internal set; }
 
         /// <summary>
         /// Response content. html/text/other data
         /// </summary>
-        public string Html { get; set; } = string.Empty;
+        public string Html { get; internal set; } = string.Empty;
 
         /// <summary>
         /// Response byte array. Only when ResultType=ResultType.Byte
         /// </summary>
-        public byte[] ResultByte { get; set; }
+        public byte[] ResultByte { get; internal set; }
 
         /// <summary>
         /// Header of response
         /// </summary>
-        public WebHeaderCollection Header { get; set; }
+        public WebHeaderCollection Header { get; internal set; }
 
         /// <summary>
         /// Http status code (enum)
         /// </summary>
-        public HttpStatusCode StatusCode { get; set; }
+        public HttpStatusCode StatusCode { get; internal set; }
 
         /// <summary>
         /// Http status code (number)
@@ -72,6 +58,6 @@ namespace Libcat.Http
         /// <summary>
         /// Description of http status
         /// </summary>
-        public string StatusDescription { get; set; }
+        public string StatusDescription { get; internal set; }
     }
 }

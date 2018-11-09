@@ -260,6 +260,13 @@ namespace Libcat.Http
             result.ResponseCookies = response.Cookies;
             result.ResponseUrl = response.ResponseUri != null ? response.ResponseUri.ToString() : string.Empty;
             result.CookieContainer = CookieContainer;
+            if (Header != null && Header.Count > 0)
+            {
+                if (!string.IsNullOrEmpty(Header["location"]))
+                {
+                     result.RedirectUrl = Header["location"].ToString();
+                }
+            }
 
             //If only request header
             if (ResultType == ResultType.So)

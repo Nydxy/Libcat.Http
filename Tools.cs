@@ -468,7 +468,7 @@ namespace Libcat.Http
     /// <summary>
     /// 从流识别编码
     /// </summary>
-    public class StreamEncoder
+    internal class StreamEncoder
     {
         /// <summary>   
         /// 取得一个文本文件的编码方式。如果无法在文件头部找到有效的前导符，Encoding.Default将被返回。   
