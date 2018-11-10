@@ -257,7 +257,6 @@ namespace Libcat.Http
             result.StatusCode = response.StatusCode;
             result.StatusDescription = response.StatusDescription;
             result.Header = response.Headers;
-            result.ResponseCookies = response.Cookies;
             result.ResponseUrl = response.ResponseUri != null ? response.ResponseUri.ToString() : string.Empty;
             result.CookieContainer = CookieContainer;
             if (Header != null && Header.Count > 0)
@@ -307,6 +306,9 @@ namespace Libcat.Http
                 return result;
             }
 
+#if NETCOREAPP2_1
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+#endif
 
             //get response encoding
             if (ResponseEncoding == null)
@@ -338,7 +340,7 @@ namespace Libcat.Http
             }
             resStream.Close();
             resStream.Dispose();
-            #endregion
+#endregion
 
             return result;
         }
@@ -417,9 +419,9 @@ namespace Libcat.Http
             return result;
         }
 
-        #endregion
+#endregion
 
-        #region 快速请求函数  Methods for easily get/post
+#region 快速请求函数  Methods for easily get/post
         public static HttpResult Get(string url) => new HttpRequest(url).GetResponse();
         public static HttpResult Get(string url, CookieContainer cookies)
         {
@@ -490,10 +492,10 @@ namespace Libcat.Http
             };
             return req.GetResponse();
         }
-        #endregion
+#endregion
     }
 
-    #region Enums
+#region Enums
     /// <summary>
     ///     Post的数据格式默认为string
     /// </summary>
@@ -535,5 +537,5 @@ namespace Libcat.Http
 		/// </summary>
 		So
 	}
-    #endregion
+#endregion
 }

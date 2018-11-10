@@ -18,12 +18,7 @@ namespace Libcat.Http
         /// <summary>
         /// 302 Redirect url. or Header[location]
         /// </summary>
-        public string RedirectUrl { get; internal set; } = string.Empty;
-
-        /// <summary>
-        /// Cookies of response, not all cookies. All updated cookies are in your cookie container.
-        /// </summary>
-        public CookieCollection ResponseCookies { get; internal set; }
+        public string RedirectUrl { get; internal set; }
 
         /// <summary>
         /// All updated cookies
